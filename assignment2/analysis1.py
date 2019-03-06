@@ -185,11 +185,11 @@ def make_varied_plots(xs,filename):
     ys,yerror = read_varied_data(filename)
     
     plt.figure()
-    plt.plot(xs,ys,'c-')
-    plt.errorbar(xs,ys, yerr=yerror,color='c')
-    plt.xlabel("strike price")
+    plt.plot(xs,ys,'magenta')
+    plt.errorbar(xs,ys, yerr=yerror,color='magenta')
+    plt.xlabel("risk-free rate")
     plt.ylabel("option price")
-    plt.title("Option price as a function of strike price")
+    plt.title("Option price as a function of interest rate")
     plt.show()
 
 def make_prices():
@@ -204,3 +204,4 @@ make_varied_plots([i for i in np.arange(0,21,1)],"part1data/putvolashigh.csv")
 make_varied_plots([i for i in np.arange(0.0,2.01,0.1)],"part1data/putvolas.csv")
 make_varied_plots([i for i in range(90,111)],"part1data/putvaluesstrikeput.csv")
 make_varied_plots([i for i in range(0,301,20)],"part1data/putstrikeshigh.csv")
+make_varied_plots([i for i in np.arange(0,1.0001,0.01)],"part1data/putinterests.csv")
